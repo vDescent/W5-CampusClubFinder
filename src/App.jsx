@@ -1,4 +1,13 @@
 import React from 'react'
+
+import { Routes, Route } from 'react-router'
+
+// Import pages
+import Home from './pages/Home'
+import ClubList from './pages/ClubList'
+import About from './pages/About'
+import ClubDetail from './pages/ClubDetail'
+
 import { useState } from 'react'
 import './App.css'
 import './index.css'
@@ -15,11 +24,16 @@ function App() {
   // console.log(test);
 
   return (
-    <>
-      <h1 className='text-red-500'>Hello world</h1>
+    <Routes>
+      {/* <h1 className='text-red-500'>Hello world</h1>
       <p className='text-green-500'>testing tailwind</p>
-      <img src={test} alt="" />
-    </>
+      <img src={test} alt="" /> */}
+
+      <Route path='/' element={<Home/>}></Route>
+      <Route path='/clubs' element={<ClubList/>}></Route>
+      <Route path='/clubs/:clubId' element={<ClubDetail/>}></Route>
+      <Route path='/about' element={<About/>}></Route>
+    </Routes>
   )
 }
 
