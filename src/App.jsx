@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import ClubList from './pages/ClubList'
 import About from './pages/About'
 import ClubDetail from './pages/ClubDetail'
+import NotFound from './pages/NotFound'
 
 import { useState } from 'react'
 import './App.css'
@@ -33,6 +34,7 @@ function App() {
       <Route path='/clubs' element={<ClubList/>}></Route>
       <Route path='/clubs/:clubId' element={<ClubDetail/>}></Route>
       <Route path='/about' element={<About/>}></Route>
+      <Route path='*' element={<NotFound/>}></Route>
     </Routes>
   )
 }
