@@ -28,7 +28,7 @@ function App() {
 
   return (
     // <div className='min-h-screen border-green-500 flex flex-col items-center'>
-    <div className=''>
+    <div className="">
       <Navbar/>
       <Routes>
         {/* <h1 className='text-red-500'>Hello world</h1>
