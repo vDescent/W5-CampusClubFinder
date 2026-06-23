@@ -3,7 +3,7 @@ import { NavLink } from "react-router"
 export default function Navbar(){
     return(
         // <nav className="flex-1 w-full bg-red-500 h-full justify-between">
-        <nav className="flex w-full h-full p-6 bg-amber-500 justify-center">
+        <nav className="flex w-full h-full p-6 bg-amber-500 justify-center sticky top-0 z-50">
             <h1 className="flex text-xl w-1/2">Club Finder</h1>
             <ul className="flex w-1/2 justify-between mx-20 text-lg">
                 <li>

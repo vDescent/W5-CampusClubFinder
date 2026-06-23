@@ -20,8 +20,10 @@ export default function ClubList(){
 
 
     return(
-        <div className="min-h-screen">
-            <div className="flex justify-center gap-2 my-2">
+        <div className="flex flex-col items-center min-h-screen gap-2 m-4">
+            <h1 className="text-5xl font-bold">Club List</h1>
+            <p className="text-xl">Here's club that available for you to join.</p>
+            <div className="flex justify-center gap-2">
                 <h1>Sortby</h1>
                 <select name="" id="">
                     <option value="">Name A-Z</option>
@@ -36,7 +38,7 @@ export default function ClubList(){
 
             {/* Ketika GRID */}
 
-            <div className={viewMode === "grid" ? "grid grid-cols-3 gap-4 justify-center m-4" : "flex flex-col gap-2 max-w-xl mx-auto"}>
+            <div className={viewMode === "grid" ? "grid grid-cols-3 gap-4 justify-center m-4" : "flex flex-col gap-4 max-w-xl mx-auto"}>
                 {clubs.map((club) =>(
                     <div key={club.id} className="flex flex-col border p-6 gap-2 bg-[#FFE9C4] rounded-2xl">
                         {/* <h2 className="text-2xl">{viewMode === "grid" ? "Grid" : "List"} {club.name}</h2> */}
