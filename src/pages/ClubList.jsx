@@ -1,12 +1,21 @@
 import { useState } from "react";
 import { clubs } from "../data/clubData"
+import { useNavigate } from "react-router";
 
 export default function ClubList(){
     // console.log(clubs.length);
     const [viewMode, setViewMode] = useState("grid");
+    const navigate = useNavigate();
 
-    for(let items of clubs){
-        console.log(items);
+    // for(let items of clubs){
+    //     console.log(items);
+    // }
+
+    const handleSeeMore = (id)=>{
+        // console.log(`clicked`);
+        console.log(id)
+        navigate(`/clubs/${id}`)
+
     }
 
 
@@ -34,8 +43,7 @@ export default function ClubList(){
                         <h2 className="text-2xl font-bold">{club.name}</h2>
                         <p>{club.shortDescription}</p>
                         <img src={club.image} alt="Club photos" className="h-full rounded-2xl"/>
-                        <button className="bg-amber-500 rounded-xl p-3 text-white hover:bg-black hover:cursor-pointer transition-colors duration-500 ease-in-out">See more</button>
-                        {/* <p>{}</p> */}
+                        <button onClick={()=> handleSeeMore(club.id)} className="bg-amber-500 rounded-xl p-3 text-white hover:bg-black hover:cursor-pointer transition-colors duration-500 ease-in-out">See more</button>
                     </div>
                 ))}
             </div>
