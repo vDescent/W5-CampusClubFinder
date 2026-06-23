@@ -7,15 +7,15 @@ export default function Navbar(){
             <h1 className="flex text-xl w-1/2">Club Finder</h1>
             <ul className="flex w-1/2 justify-between mx-20 text-lg">
                 <li>
-                    <NavLink to="/" className={({ isActive }) => isActive ? "p-3 border-amber-700 rounded-2xl bg-amber-700" : "text-black p-3"}>Home</NavLink>
+                    <NavLink to="/" className={({ isActive }) => isActive ? "p-3 border-amber-700 rounded-2xl bg-white" : "text-black p-3 hover:bg-white hover:cursor-pointer rounded-2xl transition-colors duration-600 ease-in-out"}>Home</NavLink>
                 </li>
                 
                 <li>
-                    <NavLink to="/clubs" className={({isActive}) => isActive ? "p-3 border-amber-700 rounded-2xl bg-amber-700" : "text-black p-3"}>Clubs</NavLink>
+                    <NavLink to="/clubs" className={({isActive}) => isActive ? "p-3 border-amber-700 rounded-2xl bg-white" : "text-black p-3 hover:bg-white hover:cursor-pointer rounded-2xl transition-colors duration-600"}>Clubs</NavLink>
                 </li>
 
                 <li>
-                    <NavLink to="/about" className={({isActive}) => isActive ? "p-3 border-amber-700 rounded-2xl bg-amber-700" : "text-black p-3"}>About</NavLink>
+                    <NavLink to="/about" className={({isActive}) => isActive ? "p-3 border-amber-700 rounded-2xl bg-white" : "text-black p-3 hover:bg-white hover:cursor-pointer rounded-2xl transition-colors duration-600"}>About</NavLink>
                 </li>
                     
             </ul>
