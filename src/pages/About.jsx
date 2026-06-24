@@ -1,7 +1,7 @@
 export default function About(){
     return(
         <div className="flex flex-col p-6 max-w-4xl mx-auto gap-2 min-h-screen">
-            <h1 className="text-5xl self-center font-bold">About</h1>
+            <h1 className="text-5xl self-center font-bold mb-5 max-lg:mt-20">About</h1>
             <h2 className="text-4xl font-semibold">What this app does ?</h2>
             <p className="text-xl">This app is simulate how club finder website run via localstorage. In this app user can explore club that available to user, so user can join the club.</p>
             <h2 className="text-4xl font-semibold">What Tech stack used in this project ?</h2>

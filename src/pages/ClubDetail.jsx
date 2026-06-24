@@ -22,7 +22,7 @@ export default function ClubDetail(){
     return(
         <div className="min-h-[calc(100vh-80px)] flex items-center">
             <div className="flex flex-row p-10 border-black border-2 m-8 rounded-2xl gap-4 bg-[#FFE9C4]
-            max-lg:flex-col max-lg:items-center">
+            max-lg:flex-col max-lg:items-center max-lg:mt-20">
                 <img src={displayedClub.image} alt="Club Photos" className="rounded-2xl w-1/2 object-cover
                 max-lg:h-1/2 max-lg:w-full"/>
                 <div className="flex flex-col justify-between gap-4 mx-auto max-w-sm w-1/2
