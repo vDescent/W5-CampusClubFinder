@@ -1,12 +1,22 @@
 import { useParams } from "react-router"
 import searchingClubs from "../services/findClubById";
+import { useEffect, useState } from "react";
+import { isClubJoined, joinClub } from "../services/clubStorage";
+// import { joinClub, isClubJoined } from "../services/clubStorage";
 
 export default function ClubDetail(){
     const { clubId } = useParams();
     const displayedClub = searchingClubs(clubId);
+    const [joined, setJoined] = useState( ()=> isClubJoined(clubId));
+
+    // useEffect(()=>{
+    //     setJoined(isClubJoined(clubId));
+    // }, [clubId]);
 
     const handleJoinNow = ()=>{
-        console.log(`Joined`);
+        joinClub(clubId);
+        setJoined(true);
+        // console.log(`Joined`);
     }
 
     return(
@@ -32,7 +42,7 @@ export default function ClubDetail(){
                             <p className="">Event Date: {event.date}</p>
                         </div>
                     ))}
-                    <button onClick={()=>handleJoinNow()} className="p-5 bg-amber-500 rounded-2xl w-full hover:bg-black hover:text-white hover:cursor-pointer transition-colors duration-300 ease-in-out">Join this club</button>
+                    <button onClick={handleJoinNow} disabled={joined} className="p-5 bg-amber-500 rounded-2xl w-full hover:bg-black hover:text-white hover:cursor-pointer transition-colors duration-300 ease-in-out">{joined ? "Already Joined" : "Join this club"}</button>
                     
                 </div>
             </div>

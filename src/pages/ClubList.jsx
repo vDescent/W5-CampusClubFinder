@@ -13,7 +13,7 @@ export default function ClubList(){
 
     const handleSeeMore = (id)=>{
         // console.log(`clicked`);
-        console.log(id)
+        // console.log(id)
         navigate(`/clubs/${id}`)
 
     }
