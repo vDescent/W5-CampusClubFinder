@@ -14,11 +14,8 @@ import Navbar from './components/Navbar'
 import { useState } from 'react'
 import './App.css'
 import './index.css'
-import { clubs } from './data/clubData'
-// import testing from './assets/img/01_robotics.jpg'
 
 function App() {
-  const [count, setCount] = useState(0)
   // console.log(clubs);
   // console.log(`Ongoing test:`,clubs[0]['image']);
   // console.log(clubs[0].image);
