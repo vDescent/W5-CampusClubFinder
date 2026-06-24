@@ -24,12 +24,12 @@ export default function ClubList(){
             <h1 className="text-5xl font-bold">Club List</h1>
             <p className="text-xl">Here's club that available for you to join.</p>
             <div className="flex justify-center gap-2">
-                <h1>Sortby</h1>
+                <h4>Sortby</h4>
                 <select name="" id="">
                     <option value="">Name A-Z</option>
                     <option value="">Name Z-A</option>
                 </select>
-                <h1>Mode</h1>
+                <h4>Mode</h4>
                 <select name="" id="" value={viewMode} onChange={(e) => setViewMode(e.target.value)}>
                     <option value="grid">Grid</option>
                     <option value="list">List</option>
