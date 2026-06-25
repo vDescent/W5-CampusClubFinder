@@ -1,6 +1,6 @@
 import { useParams } from "react-router"
 import searchingClubs from "../services/findClubById";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { isClubJoined, joinClub } from "../services/clubStorage";
 // import { joinClub, isClubJoined } from "../services/clubStorage";
 
@@ -8,15 +8,21 @@ export default function ClubDetail(){
     const { clubId } = useParams();
     const displayedClub = searchingClubs(clubId);
     const [joined, setJoined] = useState( ()=> isClubJoined(clubId));
+    const [showConfirm, setShowConfirm] = useState(false);
 
     // useEffect(()=>{
     //     setJoined(isClubJoined(clubId));
     // }, [clubId]);
 
     const handleJoinNow = ()=>{
+        setShowConfirm(true);
+        // console.log(`Joined`);
+    }
+    
+    const confirmJoin = () =>{
         joinClub(clubId);
         setJoined(true);
-        // console.log(`Joined`);
+        setShowConfirm(false);
     }
 
     return(
@@ -42,10 +48,25 @@ export default function ClubDetail(){
                             <p className="">Event Date: {event.date}</p>
                         </div>
                     ))}
-                    <button onClick={handleJoinNow} disabled={joined} className="p-5 bg-amber-500 rounded-2xl w-full hover:bg-black hover:text-white hover:cursor-pointer transition-colors duration-300 ease-in-out">{joined ? "Already Joined" : "Join this club"}</button>
+                    <button onClick={handleJoinNow} disabled={joined} className="p-5 bg-amber-500 rounded-2xl w-full hover:bg-black hover:text-white hover:cursor-pointer transition-colors duration-300 ease-in-out disabled:bg-black disabled:text-amber-400 disabled:cursor-not-allowed">{joined ? "Already Joined" : "Join this club"}</button>
                     
                 </div>
             </div>
+
+            {showConfirm &&(
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
+                    <div className="bg-[#FFE9C4] p-10 rounded-2xl">
+                        <h2 className="text-xl font-bold">Join {displayedClub.name}?</h2>
+                        <p>Warning: after agreeing you cannot undo this decision</p>
+
+                        <div className="flex gap-3 mt-4 justify-around">
+                            <button onClick={confirmJoin} className="w-1/2 bg-green-500 text-white px-4 py-2 rounded-2xl hover:bg-green-700 hover:cursor-pointer">Yes</button>
+                            <button onClick={()=> setShowConfirm(false)} className="w-1/2 bg-red-500 text-white px-4 py-2 rounded-2xl hover:bg-red-700 hover:cursor-pointer">Cancel</button>
+                        </div>
+                    </div>
+
+                </div>
+            )}
         </div>
     )
 }

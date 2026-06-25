@@ -34,7 +34,7 @@ export default function ClubList(){
                     <option value="az">Name A-Z</option>
                     <option value="za">Name Z-A</option>
                 </select>
-                <h4 className="text-lg font-semibold">Mode</h4>
+                <h4 className="text-lg font-semibold">Display Mode</h4>
                 <select name="" id="" value={viewMode} onChange={(e) => setViewMode(e.target.value)}>
                     <option value="grid">Grid</option>
                     <option value="list">List</option>
